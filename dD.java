@@ -5,32 +5,63 @@ public class dD{
   public static void main(String[] args){   
     
     
-    Scanner in = new Scanner(System.in);
-    
+    int i = 0;
+    while(i==0){
+    opening();
+      
     int human_total = play_human();
     
     int computer_total = play_computer();
     
     calculate_winner(human_total,computer_total);
     
+     Scanner in = new Scanner(System.in);
+        System.out.println("Play again? choose Y");
+        String q = in.nextLine();
+      if(q.equals("Y")){
+        
+        
+        System.out.println("Good luck.");
+        
+      }
+      
+      else;
+        
+       i++;
+        
+}
+}
+    
+    
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  public static int opening(){
+  Scanner e= new Scanner(System.in);
+  int a=10;
+  int b=10;
+  System.out.println("Human has $"+ a);
+  System.out.println("Computer has $" +b);
+  
+  System.out.println("How much will you bet?");
+  int x = e.nextInt();
+  return x;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -53,30 +84,30 @@ public class dD{
     
     System.out.println(human_card1+" and "+human_card2);
     
-
-    for (int i = 1; i<4; ++i){
-          System.out.println("Do you want another card (Y/N)");
-          String s = in.nextLine();
-          if(s.equals("Y")){
-      
-            human_total = human_total + (int)(Math.random()*11)+1;
-            
-            System.out.println("new human_total "+ human_total);
-      
-          }
-          
-          if(s.equals("N")){
-            
-            break;
-            
-          }
     
-          
+    for (int i = 1; i<4; ++i){
+      System.out.println("Do you want another card (Y/N)");
+      String s = in.nextLine();
+      if(s.equals("Y")){
+        
+        human_total = human_total + (int)(Math.random()*11)+1;
+        
+        System.out.println("new human_total "+ human_total);
+        
+      }
+      
+      if(s.equals("N")){
+        
+        break;
+        
+      }
+      
+      
     }
     
     return human_total;
     
-    }
+  }
   
   
   
@@ -94,15 +125,17 @@ public class dD{
     
     System.out.println(computer_card1+" and "+computer_card2);
     
-        if (computer_total<=11){
+    if (computer_total<=11){
       
-          computer_total = computer_total + (int)(Math.random()*11)+1;
+      System.out.println("Compuer pick one more card!!");
       
-          System.out.println("new computer_total "+ computer_total);
-
-        }
+      computer_total = computer_total + (int)(Math.random()*11)+1;
+      
+      System.out.println("new computer_total "+ computer_total);
+      
+    }
     
-        return computer_total;
+    return computer_total;
     
   }
   
@@ -114,15 +147,19 @@ public class dD{
   public static void calculate_winner(int human_total, int computer_total){
     
     if(human_total<=21 && computer_total<human_total){
-      
+      System.out.println("Computer loses money");
       System.out.println("Human Wins");
       
-    }
-    else {
       
+    }
+    
+    
+    else {
+      System.out.println("Human loses money");
       System.out.println("Computer Wins");
       
     }
     
   }
 }
+  
