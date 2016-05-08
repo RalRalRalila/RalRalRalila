@@ -1,4 +1,4 @@
-                                        import java.util.Scanner;
+                                         import java.util.Scanner;
                                         public class dD{
                                           
                                           
@@ -67,7 +67,7 @@
                                               
                                               System.out.println(name+" loses money $"+bettingMoney);
                                               
-                                              System.out.println(name2 +" Wins");
+                                              System.out.println(name2 +" Wins $" +bettingMoney2);
                                               
                                               judge=0;
                                               
@@ -98,15 +98,15 @@
                                             System.out.println("Play again? choose Y");
                                                 
                                             String q = in.nextLine();
-                                            
-                                            if(q.equals("Y")){
+                                           
+                                            if(q.equals("Y") && humanMoney>0 && whoMoney>0){
                                                 
-                                              System.out.println("Good luck.");
+                                              System.out.println("Good luck to fight to friend.");
                                             }
                                             
                                             else{
                                               
-                                              System.out.println("Cheer up Baby.");
+                                              System.out.println("Game end. Guy who have worse Money is loser.");
                                               
                                               again++;
                                             }
@@ -141,6 +141,17 @@
                                             int human_total = play_human(name);
                                             
                                             int computer_total = play_computer();
+                                            
+                                            System.out.println("Do you want to more betting?: ");  
+                                            
+                                            int adittionMoney = e.nextInt();
+                                            
+                                            bettingMoney = bettingMoney+adittionMoney;
+                                            
+                                            System.out.println("You bet $"+bettingMoney);
+    
+                                            
+                                            System.out.println("Actually.. new computer_total is "+ computer_total);
                                             
                                             if(human_total<=21 && computer_total<human_total){
                                               
@@ -189,7 +200,7 @@
                                                 
                                             String q = in.nextLine();
                                             
-                                            if(q.equals("Y")){
+                                            if(q.equals("Y") && humanMoney>0){
                                                 
                                               System.out.println("Good luck.");
                                             }
@@ -257,7 +268,7 @@
                                                 
                                                 human_total = human_total + (int)(Math.random()*11)+1;
                                                 
-                                                System.out.println("new "+ name +"got "+ human_total);
+                                                System.out.println("new "+ name +" got "+ human_total);
                                                 
                                               }
                                               
@@ -301,7 +312,7 @@
                                                 
                                                 human_total2 = human_total2 + (int)(Math.random()*11)+1;
                                                 
-                                                System.out.println("new  "+name2 +"got "+ human_total2);
+                                                System.out.println("new  "+name2 +" got "+ human_total2);
                                                 
                                               }
                                               
@@ -332,7 +343,10 @@
                                             
                                             System.out.println("Computer player got");
                                             
-                                            System.out.println(computer_card1+" and "+computer_card2);
+                                            System.out.println(computer_card1+" and "+"Hidden");
+                                            
+                                            
+                                            
                                             
                                             if (computer_total<=11){
                                               
@@ -340,10 +354,10 @@
                                               
                                               computer_total = computer_total + (int)(Math.random()*11)+1;
                                               
-                                              System.out.println("new computer_total "+ computer_total);
+                                              System.out.println("new computer_total "+ computer_card1 +" + [Hidden] and [Hidden]");
                                               
                                             }
-                                            
+                                            System.out.println("t");
                                             return computer_total;
                                             
                                           }
