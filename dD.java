@@ -50,7 +50,7 @@ public class dD{
           
           int human_total = play_human(name);
           
-          int human_total2 = play_human2(name2);
+          int human_total2 = play_human(name2);
           
           if(human_total<=21 && human_total2<human_total){
             
@@ -256,78 +256,6 @@ public class dD{
     
     System.out.println(human_card1+" and "+human_card2);
     
-    
-    
-    for (int i = 1; i<4; ++i){
-      
-      System.out.println("Do you want another card (Y/N)");
-      
-      String s = in.nextLine();
-      
-      if(s.equals("Y")){
-        
-        human_total = human_total + (int)(Math.random()*11)+1;
-        
-        System.out.println("new "+ name +" got "+ human_total);
-        
-      }
-      
-      if(s.equals("N")){
-        
-        break;
-        
-      }
-      
-      
-    }
-    
-    return human_total;
-    
-  }
-  
-  
-  public static int play_human2(String name2){
-    
-    Scanner in = new Scanner(System.in);
-    
-    int human_card1 = (int)(Math.random()*11)+1;
-    
-    int human_card2 = (int)(Math.random()*11)+1;
-    
-    int human_total2 = human_card1 + human_card2;
-    
-    System.out.println(name2+" player got");
-    
-    System.out.println(human_card1+" and "+human_card2);
-    
-    
-    
-    for (int i = 1; i<4; ++i){
-      
-      System.out.println("Do you want another card (Y/N)");
-      
-      String s = in.nextLine();
-      
-      if(s.equals("Y")){
-        
-        human_total2 = human_total2 + (int)(Math.random()*11)+1;
-        
-        System.out.println("new  "+name2 +" got "+ human_total2);
-        
-      }
-      
-      if(s.equals("N")){
-        
-        break;
-        
-      }
-      
-      
-    }
-    
-    return human_total2;
-    
-  }
   
   
   
